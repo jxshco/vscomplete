@@ -2,7 +2,7 @@
   "name": "vscomplete",
   "displayName": "VSComplete",
   "description": "Visually mark files and folders as complete in the VS Code explorer",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "publisher": "jxshco",
   "license": "MIT",
   "repository": {
