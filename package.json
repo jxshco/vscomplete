@@ -1,0 +1,93 @@
+{
+  "name": "vscomplete",
+  "displayName": "VSComplete",
+  "description": "Visually mark files and folders as complete in the VS Code explorer",
+  "version": "0.1.0",
+  "publisher": "jxshco",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jxshco/vscomplete.git"
+  },
+  "homepage": "https://github.com/jxshco/vscomplete",
+  "bugs": {
+    "url": "https://github.com/jxshco/vscomplete/issues"
+  },
+  "keywords": [
+    "vscode",
+    "explorer",
+    "file",
+    "complete",
+    "progress",
+    "tracking",
+    "badge",
+    "checkmark"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "icon": "images/icon-128.png",
+  "galleryBanner": {
+    "color": "#F5A623",
+    "theme": "light"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscomplete.markComplete",
+        "title": "Mark as Complete"
+      },
+      {
+        "command": "vscomplete.unmarkComplete",
+        "title": "Unmark as Complete"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "vscomplete.markComplete",
+          "group": "vscomplete@1"
+        },
+        {
+          "command": "vscomplete.unmarkComplete",
+          "group": "vscomplete@1"
+        }
+      ]
+    },
+    "colors": [
+      {
+        "id": "vscomplete.completedForeground",
+        "description": "Color for completed files and folders in the explorer",
+        "defaults": {
+          "dark": "#22c55e",
+          "light": "#16a34a",
+          "highContrast": "#22c55e",
+          "highContrastLight": "#16a34a"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap",
+    "watch": "yarn compile --watch",
+    "lint": "eslint src/",
+    "package": "vsce package --yarn"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "esbuild": "^0.24.0",
+    "eslint": "^10.0.3",
+    "typescript": "^5.7.0"
+  }
+}

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <defs>
+    <linearGradient id="folderBack" x1="128" y1="40" x2="128" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F5A623"/>
+      <stop offset="1" stop-color="#E8911A"/>
+    </linearGradient>
+    <linearGradient id="folderFront" x1="128" y1="80" x2="128" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFBE2E"/>
+      <stop offset="1" stop-color="#F5A623"/>
+    </linearGradient>
+    <linearGradient id="check" x1="196" y1="160" x2="196" y2="224" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#34D058"/>
+      <stop offset="1" stop-color="#28A745"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Folder back tab -->
+  <path d="M28 56 C28 46 36 40 46 40 L100 40 C106 40 112 44 114 50 L122 68 L210 68 C220 68 228 76 228 86 L228 86 L28 86 Z" fill="url(#folderBack)"/>
+
+  <!-- Folder body -->
+  <rect x="20" y="78" width="216" height="132" rx="16" fill="url(#folderFront)" filter="url(#shadow)"/>
+
+  <!-- Green check circle -->
+  <circle cx="196" cy="192" r="36" fill="url(#check)" filter="url(#shadow)"/>
+
+  <!-- White checkmark -->
+  <path d="M180 192 L191 203 L213 181" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
