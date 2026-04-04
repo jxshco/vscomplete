@@ -16,15 +16,37 @@ A lightweight extension that adds a green checkmark badge to files and folders y
 
 ## Installation
 
-### VS Code Marketplace
+### Visual Studio Code (Microsoft Marketplace)
 
-Search for **VSComplete** in the VS Code Extensions panel, or install from the command line:
+The extension is published as **`jxshco.vscomplete`**. Search for **VSComplete** in the Extensions panel (low install count can hide it in browse results—pasting the full ID in the search box works), or install from a terminal:
 
 ```sh
 code --install-extension jxshco.vscomplete
 ```
 
-### From Source
+### Cursor, VSCodium, and other Open VSX–based editors
+
+Those products resolve extensions from the [Open VSX Registry](https://open-vsx.org/), not the Microsoft VS Code Marketplace. **VSComplete is not listed on Open VSX yet**, so commands like `cursor --install-extension jxshco.vscomplete` fail with “extension not found” even though the ID is correct.
+
+Until it is published to Open VSX, install from a **`.vsix`**:
+
+1. **Build locally** (from this repo):
+
+   ```sh
+   yarn install
+   yarn compile
+   yarn package
+   ```
+
+   This produces `vscomplete-<version>.vsix` in the project root.
+
+2. **Install the file** — either:
+   - Command Palette → **Extensions: Install from VSIX…** → choose the `.vsix`, or
+   - Terminal: `cursor --install-extension ./vscomplete-0.1.0.vsix` (adjust the filename to match the version you built).
+
+To make the extension searchable and CLI-installable in Cursor, publish the same package to Open VSX (namespace must match publisher `jxshco`).
+
+### From source (development)
 
 ```sh
 git clone https://github.com/jxshco/vscomplete.git
@@ -33,7 +55,7 @@ yarn install
 yarn compile
 ```
 
-Then press `F5` in VS Code to launch the Extension Development Host.
+Then press `F5` in VS Code to launch the Extension Development Host. After `yarn compile`, run **`yarn package`** to produce a `.vsix` (for Open VSX–based editors or manual installs).
 
 ## Usage
 

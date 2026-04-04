@@ -25,6 +25,8 @@ Thanks for your interest in contributing to VSComplete!
 
 4. Press `F5` in VS Code to launch the Extension Development Host with the extension loaded.
 
+**Cursor / VSCodium:** those editors use Open VSX, not the Microsoft Marketplace. See [README — Installation](README.md#installation) for building a `.vsix` and installing it there.
+
 ## Scripts
 
 | Command | Description |
